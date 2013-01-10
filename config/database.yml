@@ -35,6 +35,6 @@ test:
 
 production:
   adapter: postgresql
-  database: flitter
+  database: db/production.postgresql
   pool: 5
   timeout: 5000
