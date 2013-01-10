@@ -4,7 +4,12 @@ gem 'rails', '3.2.9'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-gem 'mysql2'
+group :development, :test do
+  gem 'mysql2'
+end
+group :production do
+  gem 'pg'
+end
 
 gem 'will_paginate', '~> 3.0.3'
 gem 'jquery-rails'
