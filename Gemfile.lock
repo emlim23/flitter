@@ -115,11 +115,12 @@ PLATFORMS
 DEPENDENCIES
   activerecord-postgresql-adapter
   annotate (>= 2.5.0)
-  coffee-rails
+  coffee-rails (~> 3.2.1)
+  execjs (= 1.4.0)
   jquery-rails
   mysql2
   pg
   rails (= 3.2.9)
-  sass-rails
-  uglifier
+  sass-rails (~> 3.2.3)
+  uglifier (>= 1.0.3)
   will_paginate (~> 3.0.3)
