@@ -5,14 +5,12 @@
   	<div class="profile-pic-container"><%= profile_pic @user %></div>
   	<div class="profile-main-info">
 		<h1><%= @user.username %></h1>
-		<% if signed_in? && params[:username] == current_user.username %>
+		<% if signed_in? && params[:id] == current_user.username %>
 			<!-- <h4>Hey <%= @user.username %>, what's up? -->
-			<%= render 'shared/micropost_form' %>
+			<%= render 'shared/micropost_form' %></h4>
 		<% end %>
 	</div>
 	<div class="round profile-side-info">
-		<%= link_to('Edit Profile', "/users/edit/#{current_user.username}") if signed_in? %>
-		<br />
 		<strong>Name: </strong> <%= @user.fullname %><br />
 		<strong>URL: </strong> <%= link_to "/users/#{@user.username}", "/users/#{@user.username}"  %><br />
 		<strong>Total post(s): </strong><%= @user.microposts.count.to_s %>

@@ -14,12 +14,4 @@ module UsersHelper
   def profile_pic_small(user)
   	image_tag("profile_pics/#{user.picture}", :alt => user.fullname, :width => 30, :height => 30)
   end
-
-  def link_to_user(user)
-    link_to user.fullname, "/flitter/user/#{user.username}"
-  end
-
-  def link_pic_to_user(user)
-    link_to profile_pic_small(user), "/flitter/user/#{user.username}"
-  end
 end

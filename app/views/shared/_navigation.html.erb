@@ -1,7 +1,7 @@
 <li><%= link_to('Users', users_path)  %></li>
 <% if signed_in? %>
   <li>
-  	<%= link_to('Profile', "/flitter/user/#{current_user.username}") %>
+  	<%= link_to('Edit Profile', "/users/edit/#{current_user.username}") %>
   </li>
   <li><%= link_to('Sign Out', signout_path, :method => :delete) %></li>
 <% else %>
