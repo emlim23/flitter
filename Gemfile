@@ -11,3 +11,10 @@ gem 'jquery-rails'
 group :development do
 	gem 'annotate', ">=2.5.0"
 end
+
+group :assets do
+  gem 'therubyracer'
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
+end
