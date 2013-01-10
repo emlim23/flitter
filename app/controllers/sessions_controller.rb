@@ -12,8 +12,9 @@ class SessionsController < ApplicationController
 	else
 	  	#handle successful signin
       sign_in user
-      if session[:return_to].nil? #show the profile page of the signed in user if no return_to redirection
-         redirect_to :controller => :users, :action => 'show', :id => user.username
+      if session[:return_to].nil? #show the user feeds page of the signed in user if no return_to redirection
+         # redirect_to :controller => :users, :action => 'show', :id => user.username
+         redirect_to feeds_path
       else
         redirect_to session[:return_to]
       end

@@ -9,7 +9,8 @@ FlitterMysql::Application.routes.draw do
   match '/about',                   :to => 'pages#about'
   match '/flitter/user/:username',  :to => 'users#show'
   match '/users/edit/:username',    :to => 'users#edit'
-  match '/signup',  				        :to => 'users#new'
+  match '/signup',                  :to => 'users#new'
   match '/signin',                  :to => 'sessions#new'
   match '/signout',                 :to => 'sessions#destroy'
+  match '/feeds',                   :to => 'microposts#index'
 end

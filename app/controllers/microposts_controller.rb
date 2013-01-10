@@ -2,6 +2,12 @@ class MicropostsController < ApplicationController
 	before_filter :authenticate # authenticate is located at the SessionsHelper
 	before_filter :authorized_user, :only => :destroy
 
+	def index
+		@feed_item = Micropost.paginate(:page => params[:page], :per_page => 20)
+		@micropost = Micropost.new 
+		@user = current_user
+	end
+
 	def create
 		# Equivalent of Micropost.new. Except this one is automatically tied in with the user
 		@micropost = current_user.microposts.build(params[:micropost])
