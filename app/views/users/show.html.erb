@@ -11,7 +11,7 @@
 		<% end %>
 	</div>
 	<div class="round profile-side-info">
-		<%= link_to('Edit Profile', "/users/edit/#{current_user.username}") %>
+		<%= link_to('Edit Profile', "/users/edit/#{current_user.username}") if signed_in? %>
 		<br />
 		<strong>Name: </strong> <%= @user.fullname %><br />
 		<strong>URL: </strong> <%= link_to "/users/#{@user.username}", "/users/#{@user.username}"  %><br />

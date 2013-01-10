@@ -120,6 +120,7 @@ DEPENDENCIES
   coffee-rails
   jquery-rails
   mysql2
+  pg
   rails (= 3.2.9)
   sass-rails
   therubyracer
