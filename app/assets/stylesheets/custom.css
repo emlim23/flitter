@@ -1,0 +1,269 @@
+.container {
+	width: 960px;
+	margin: 0 auto;
+}
+
+body {
+	background: #61a3c4;
+}
+
+/* headers and footers */
+header {
+	text-align: center;
+}
+
+header nav {
+	text-align: right;
+}
+
+header img {
+	padding: 1em;
+}
+
+footer {
+	clear: both;
+	text-align: center;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+footer nav {
+	float: none;
+}
+
+section {
+	margin-top: 0.3em;
+	padding: 1em;
+	font-size: 120%;
+	padding: : 20px;
+	background: #fff;
+}
+
+section h1 {
+	font-size: 200%;
+}
+
+/* Links */
+
+a {
+	color: #4f5456;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #818181;
+	text-decoration: underline;
+}
+
+a:visited {
+	color: #4f5456;
+}
+
+/* Navigation */
+nav {
+	background: #fff;
+	padding: 0 1em;
+	white-space: nowrap;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+nav ul li {
+	list-style-type: none;
+	display: inline-block;
+	padding: 0.2em 0;
+}
+
+nav ul li a {
+	padding: 0 5px;
+	font-weight: bold;
+}
+
+nav ul li a:visited {
+	color: #4f5456;
+}
+
+nav ul li a:hover {
+	text-decoration: underline;
+}
+
+/* Home styles */
+
+.welcome-note {
+	width: 410px;
+	height: 365px;
+	padding: 10px;
+}
+
+.sign-up-boxes{
+	float: right;
+	width: 400px;
+}
+
+.sign-in{
+	border: solid 1px #000;
+	padding: 15px;
+}
+
+.sign-up{
+	border: solid 1px #000;
+	padding: 15px;
+}
+
+.sign-in label, .sign-up label{
+	display: inline-block;
+	width: 130px;
+}
+
+/* Sign in/Sign up button */
+a.signin-button {
+	margin-left: auto;
+	margin-right: auto;
+	display: inline-block;
+	text-align: center;
+	width: 80px;
+	color: #fff;
+	background: #61a3c4;
+	font-size: 10pt;
+	font-weight: bold;
+	padding: 5px;
+}
+
+a.signup-button {
+	margin-left: auto;
+	margin-right: auto;
+	display: inline-block;
+	text-align: center;
+	width: 240px;
+	color: #fff;
+	background: #61a3c4;
+	font-size: 10pt;
+	font-weight: bold;
+	padding: 5px;
+}
+
+/* Round corners */
+.round {
+	-moz-border-radius: 	10px;
+	-webkit-border-radius:	10px;
+	border-radius: 			10px;
+}
+
+/* User profile page */
+.profile-info {
+	width: 900px;
+	border: solid 1px #000;
+	padding: 1em;
+}
+
+.profile-pic-container {
+	display: inline-block;
+	border: solid 1px #000;
+	height: 100px;
+	width: 100px;
+	vertical-align: top;
+}
+
+.profile-main-info {
+	display: inline-block;
+	width: 520px;
+	padding-left: 1em; 
+}
+
+.profile-side-info {
+	display: inline-block;
+	width: 220px;
+	border: solid 1px #000;
+	padding: 1em; 
+	vertical-align: top;
+}
+
+/* Microposts Styles */
+.microposts{
+	margin-top: 3px;
+	border: solid 1px #000;
+	padding: 1em; 
+}
+
+.microposts li {
+	list-style: none;
+	vertical-align: top;
+	padding: 5px 0 5px 0;
+	border-top: solid 1px #555;
+}
+
+.content {
+	width: 300px;
+}
+
+.timestamp {
+	color: #555;
+	font-style: italic;
+	font-size: 9pt;
+}
+
+.new-micropost input {
+	vertical-align: top;
+	margin-top: 5px;
+}
+
+.new-micropost textarea {
+	height: 30px;
+	width: 420px;
+}
+
+.microposts li img {
+	height: 50px;
+	width: 50px;
+	float: left;
+	margin-right: 5px;
+}
+
+/* User List Page */
+ul.users {
+	margin-top: 1em;
+}
+
+ul.users li {
+	list-style: none;
+	padding-left: 30px;
+	vertical-align: top;
+}
+
+ul.users li a {
+	vertical-align: top;
+}
+
+/* Form Style */
+label.error {
+	display: block;
+	border: solid 1px #000;
+	width: 200px;
+	position: absolute;
+	top: 3px;
+	right: -130px;
+	font-size: 8pt;
+}
+
+.form-field{
+	position: relative;
+	width: 360px;
+}
+
+.form-field-no-width{
+	position: relative;
+}
+
+input.error{
+	border-color: #f00;
+	padding: 0;
+}
+
+input[type=submit] {
+	border: 1px solid black;
+	padding: 5px 10px;
+}

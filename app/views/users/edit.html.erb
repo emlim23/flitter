@@ -1,0 +1,29 @@
+<h1>Edit User Profile</h1>
+
+<div class="round sign-up">
+<%= form_for(@user) do |f| %>
+	<%= render 'shared/error_messages', :object => @user %>
+	<div class="form-field">
+		<%= f.label :username %>
+		<%= f.text_field :username, :class => "required" %>
+	</div>
+	<div class="form-field">
+		<%= f.label :fullname %>
+		<%= f.text_field :fullname, :class => "required" %>
+	</div>
+	<div class="form-field">
+		<%= f.label :email %>
+		<%= f.email_field :email, :class => "required" %>
+	</div>
+	<div class="form-field">
+		<%= f.label :password %>
+		<%= f.password_field :password, :class => "required" %>
+	</div>
+	<div class="form-field">
+		<%= f.label :password_confirmation, "Confirmation" %>
+		<%= f.password_field :password_confirmation, :class => "required" %>
+	</div>
+	<label>&nbsp;</label>
+	<%= f.submit "Update", :class => "check-required" %>
+<% end %>
+</div>

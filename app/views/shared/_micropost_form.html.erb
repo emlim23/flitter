@@ -1,0 +1,10 @@
+<%= form_for(@micropost) do |f| %>
+	<div class="new-micropost">
+		<%= render 'shared/error_messages', :object => @micropost %>
+		<div class="form-field-no-width">
+			<%= f.label :content, :class => "hidden" %>
+			<%= f.text_area :content, :rows => 4, :class => "max-length-200 text-expand required", :placeholder => "What's up?" %>
+			<%= f.submit "Post", :class => "check-required" %>
+		</div>
+	</div>
+<% end %>

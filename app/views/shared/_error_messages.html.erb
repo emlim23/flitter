@@ -1,0 +1,14 @@
+<% if !object.nil? && object.errors.any? %> <!-- check if the object is not nil. -->
+  <div id="error_explanation" class="error">
+	<h2>
+		<%= pluralize(object.errors.count, "error") %>
+		prohibited this <%= object.class.to_s.underscore.humanize.downcase %> from being saved:
+	</h2>
+	<p>Problems with the following fields:</p>
+	<ul>
+    	<% object.errors.full_messages.each do |message| %>
+    		<li><%= message %></li>
+    	<% end %>
+    </ul>
+  </div>
+<% end %>

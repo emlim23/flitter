@@ -1,0 +1,18 @@
+ <!-- Sign In Form partial, this is to centralize the coding.
+ 		This partial is called at the Home page and in the Sign In page -->
+<div class="round sign-in">
+  <%= form_for(session_resource_name, :url => session_resource_path, 
+  									  :id => "sign_in_form") do |f| %>
+	<span>Login:</span><br />
+	<div class="form-field">
+		<label><%= f.label :username %></label>
+		<%= f.text_field :username, :class => "required" %>
+	</div>
+	<div class="form-field">
+		<label><%= f.label :password %></label>
+		<%= f.password_field :password, :class => "required" %>
+	</div>
+	<label></label><%= f.submit "Sign in", :class => "check-required" %>
+	<br />
+  <% end %>
+</div>

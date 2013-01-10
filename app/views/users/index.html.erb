@@ -1,0 +1,19 @@
+<h1>Flitter Users</h1>
+
+<%= will_paginate %>
+<ul class="users">
+	<% @users.each do |user| %>
+		<li>
+			<%= link_pic_to_user user %>
+			<%= link_to_user user %>
+			<% if !current_user.nil? && current_user.admin? %>
+			|
+			<%= link_to "delete", user, :method => :delete, 
+										:confirm => "Are you sure you want to delete this user?",
+										:title => "Delete #{user.username}" %>
+			<% end %>
+		</li>
+	<% end %>
+</ul>
+
+<%= will_paginate %>
