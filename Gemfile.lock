@@ -87,9 +87,6 @@ GEM
     tzinfo (0.3.35)
     will_paginate (3.0.3)
 
-PLATFORMS
-  x86-mingw32
-
 DEPENDENCIES
   annotate (>= 2.5.0)
   jquery-rails
