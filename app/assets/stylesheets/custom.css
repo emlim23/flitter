@@ -94,14 +94,15 @@ nav ul li a:hover {
 /* Home styles */
 
 .welcome-note {
-	width: 410px;
-	height: 365px;
+	width: 450px;
+	display: inline-block;
 	padding: 10px;
+	vertical-align: top;
 }
 
 .sign-up-boxes{
-	float: right;
-	width: 400px;
+	width: 430px;
+	display: inline-block;
 }
 
 .sign-in{
