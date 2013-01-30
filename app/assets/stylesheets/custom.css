@@ -197,6 +197,11 @@ a.signup-button {
 	border-top: solid 1px #555;
 }
 
+.microposts li img {
+	float: left;
+	margin-right: 1em;
+}
+
 .content {
 	width: 300px;
 }

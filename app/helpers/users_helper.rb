@@ -8,11 +8,11 @@ module UsersHelper
   end
 
   def profile_pic(user)
-  	image_tag("profile_pics/#{user.picture}", :alt => user.fullname)
+  	image_tag("profile_pics/#{user.picture}", :alt => user.fullname, :width => 100, :height => 100)
   end
 
   def profile_pic_small(user)
-  	image_tag("profile_pics/#{user.picture}", :alt => user.fullname, :width => 30, :height => 30)
+  	image_tag("profile_pics/#{user.picture}", :alt => user.fullname, :width => 40, :height => 40)
   end
 
   def link_to_user(user)

@@ -2,6 +2,7 @@ FlitterMysql::Application.routes.draw do
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
   resources :microposts, :only => [:create, :destroy]
+  resources :upload, :only => [:upload]
 
   root :to => "pages#home"
 
@@ -13,4 +14,5 @@ FlitterMysql::Application.routes.draw do
   match '/signin',                  :to => 'sessions#new'
   match '/signout',                 :to => 'sessions#destroy'
   match '/feeds',                   :to => 'microposts#index'
+  match '/upload',                   :to => 'upload#upload'
 end

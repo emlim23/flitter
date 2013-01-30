@@ -118,7 +118,7 @@ DEPENDENCIES
   coffee-rails
   jquery-rails
   mysql2
-  pg
+  pg (>= 0.12.2)
   rails (= 3.2.9)
   sass-rails
   uglifier

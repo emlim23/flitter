@@ -9,6 +9,7 @@
 		<% end %>
 	</div>
 <ul>
+	<%= will_paginate @feed_item, :previous_label => '<- Newer', :next_label => 'Older ->' %>
 	<% @feed_item.each do |feed_item| %>
 		<li>
 			<%= link_pic_to_user feed_item.user %>
@@ -18,5 +19,6 @@
 			<span class="timestamp">Posted <%= time_ago_in_words(feed_item.created_at) %> ago.</span>
 		</li>		
 	<% end %>
+	<%= will_paginate @feed_item, :previous_label => '<- Newer', :next_label => 'Older ->' %>
 </ul>
 </div>
