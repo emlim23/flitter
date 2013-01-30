@@ -1,7 +1,7 @@
 <h1>Edit User Profile</h1>
 
 <div class="round sign-up">
-<%= form_for(@user) do |f| %>
+<%= form_for @user, :html => { :multipart => true } do |f| %>
 	<%= render 'shared/error_messages', :object => @user %>
 	<div class="form-field">
 		<%= f.label :username %>
@@ -22,6 +22,11 @@
 	<div class="form-field">
 		<%= f.label :password_confirmation, "Confirmation" %>
 		<%= f.password_field :password_confirmation, :class => "required" %>
+	</div>
+	<div class="form-field">
+		<%= f.label :pic, "Picture" %>
+		<%= f.file_field :pic %><br />
+		<span>Please limit your picture to 500 x 500 pixels</span>
 	</div>
 	<label>&nbsp;</label>
 	<%= f.submit "Update", :class => "check-required" %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130110011052) do
+ActiveRecord::Schema.define(:version => 20130130143752) do
 
   create_table "microposts", :force => true do |t|
     t.string   "content"
@@ -26,12 +26,20 @@ ActiveRecord::Schema.define(:version => 20130110011052) do
     t.string   "username"
     t.string   "fullname"
     t.string   "email"
-    t.datetime "created_at",                                           :null => false
-    t.datetime "updated_at",                                           :null => false
+    t.datetime "created_at",                                            :null => false
+    t.datetime "updated_at",                                            :null => false
     t.string   "encrypted_password"
     t.string   "salt"
-    t.boolean  "admin",              :default => false
-    t.string   "picture",            :default => "no-profile-pic.jpg"
+    t.boolean  "admin",               :default => false
+    t.string   "picture",             :default => "no-profile-pic.jpg"
+    t.string   "attach_file_name"
+    t.string   "attach_content_type"
+    t.integer  "attach_file_size"
+    t.datetime "attach_updated_at"
+    t.string   "pic_file_name"
+    t.string   "pic_content_type"
+    t.integer  "pic_file_size"
+    t.datetime "pic_updated_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -16,9 +16,13 @@
 
 class User < ActiveRecord::Base
   attr_accessor		:password
-  attr_accessible 	:email, :fullname, :username, :password, :password_confirmation
+  attr_accessible 	:email, :fullname, :username, :password, :password_confirmation, :pic
 
   has_many :microposts, :dependent => :destroy
+
+  has_attached_file :pic, :styles => 
+           { :medium => "100x100>", :thumb => "40x40>" }
+  has_attached_file :attach
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   username_regex = /^[\S]*$/i
