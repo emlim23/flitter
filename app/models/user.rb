@@ -28,6 +28,10 @@ class User < ActiveRecord::Base
   attr_accessible 	:email, :fullname, :username, :password, :password_confirmation, :pic
 
   has_many :microposts, :dependent => :destroy
+  has_many :relationships, :dependent => :destroy,
+                            :foreign_key => "user_id"
+  has_many :friendships, :through => :relationships, 
+                         :source => :friends
 
   has_attached_file :pic, :styles => 
            { :medium => "100x100>", :thumb => "40x40>" }
@@ -56,6 +60,20 @@ class User < ActiveRecord::Base
     Micropost.where("user_id = ?", id)
   end
 
+  def is_friend?(person)
+    relationships.find_by_friend_id(person)
+  end
+
+  def befriend!(person)
+    person.relationships.create(:friend_id => self.id)
+    relationships.create(:friend_id => person.id)
+  end
+
+  def unfriend!(friend)
+    friend.relationships.find_by_friend_id(self).destroy
+    relationships.find_by_friend_id(friend).destroy
+  end
+
   def update_current_msg(msg_id)
     self.update_attribute(:current_msg_id, msg_id)
   end
@@ -80,7 +98,7 @@ class User < ActiveRecord::Base
 
     def encrypt_password # method for converting the password to the encrypted one
       self.salt = make_salt if new_record?
-      self.encrypted_password = encrypt(self.password)
+      self.encrypted_password = encrypt(self.password) unless self.password.blank?
     end
 
     def encrypt(string) 

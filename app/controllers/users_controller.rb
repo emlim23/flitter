@@ -30,6 +30,21 @@ class UsersController < ApplicationController
     end
   end
 
+  def relationships
+    param_val = params[:id]
+    if params[:id].nil? # because of the custom routing, we have to check if the routes passed the username as ID or as the actual username param
+      param_val = params[:username]
+    end
+
+    @user = User.find_by_username(param_val) 
+    
+    if @user.nil?
+      @title = ""
+    else
+      @title =  @user.fullname
+    end
+  end
+
   def create
   	@user = User.new(params[:user])
   	if @user.save

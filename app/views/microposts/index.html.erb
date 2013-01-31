@@ -2,7 +2,7 @@
 <div class="round microposts">
 	<div class="profile-pic-container"><%= profile_pic @user %></div>
   	<div class="profile-main-info">
-		<h1><%= @user.username %></h1>
+		<h1><%= @user.fullname %></h1>
 		<% if signed_in? %>
 			<!-- <h4>Hey <%= @user.username %>, what's up? -->
 			<%= render 'shared/micropost_form' %>

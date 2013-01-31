@@ -16,7 +16,8 @@
 		<br />
 		<strong>Name: </strong> <%= @user.fullname %><br />
 		<strong>URL: </strong> <%= link_to "/users/#{@user.username}", "/users/#{@user.username}"  %><br />
-		<strong>Total post(s): </strong><%= @user.microposts.count.to_s %>
+		<strong>Total post(s): </strong><%= @user.microposts.count.to_s %> <br />
+		<strong>Friend(s): </strong><%= link_to @user.relationships.count.to_s, "/users/friends/#{@user.username}" %>
 	</div>
   </div>
   <% if @user.microposts.any? %>
