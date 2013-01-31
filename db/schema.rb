@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130130143752) do
+ActiveRecord::Schema.define(:version => 20130131071751) do
 
   create_table "microposts", :force => true do |t|
     t.string   "content"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20130130143752) do
     t.string   "pic_content_type"
     t.integer  "pic_file_size"
     t.datetime "pic_updated_at"
+    t.integer  "current_msg_id",      :default => 0
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

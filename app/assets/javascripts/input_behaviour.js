@@ -16,9 +16,12 @@ if (jQuery) {
         });
 
         var timer=null;
-        var isBlurred = false;
+        var isBlurred = true;
         var pageRefreshTimer = 120;
         var refreshCounter = 0;
+        var flagger = $('#newMsgFlagger');
+        var oldTitle = document.title;
+        var isOldTitle = true;
 
         window.onBlur = function(){
         	isBlurred = true;
@@ -35,6 +38,11 @@ if (jQuery) {
         	if(refreshCounter < pageRefreshTimer)
         	{
 // should check a flag which is triggered by cookies or driven by the database to make sure the view has new messages
+                if(isBlurred && flagger.length > 0)
+                {
+                    document.title = (isOldTitle) ? "New posts!!!" : oldTitle;
+                    isOldTitle = !isOldTitle;
+                }
         	}
         	else
         		window.location.reload();

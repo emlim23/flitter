@@ -2,16 +2,25 @@
 #
 # Table name: users
 #
-#  id                 :integer          not null, primary key
-#  username           :string(255)
-#  fullname           :string(255)
-#  email              :string(255)
-#  created_at         :datetime         not null
-#  updated_at         :datetime         not null
-#  encrypted_password :string(255)
-#  salt               :string(255)
-#  admin              :boolean          default(FALSE)
-#  picture            :string(255)      default("no-profile-pic.jpg")
+#  id                  :integer          not null, primary key
+#  username            :string(255)
+#  fullname            :string(255)
+#  email               :string(255)
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  encrypted_password  :string(255)
+#  salt                :string(255)
+#  admin               :boolean          default(FALSE)
+#  picture             :string(255)      default("no-profile-pic.jpg")
+#  attach_file_name    :string(255)
+#  attach_content_type :string(255)
+#  attach_file_size    :integer
+#  attach_updated_at   :datetime
+#  pic_file_name       :string(255)
+#  pic_content_type    :string(255)
+#  pic_file_size       :integer
+#  pic_updated_at      :datetime
+#  current_msg_id      :integer          default(0)
 #
 
 class User < ActiveRecord::Base
@@ -22,7 +31,6 @@ class User < ActiveRecord::Base
 
   has_attached_file :pic, :styles => 
            { :medium => "100x100>", :thumb => "40x40>" }
-  has_attached_file :attach
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   username_regex = /^[\S]*$/i
@@ -46,6 +54,14 @@ class User < ActiveRecord::Base
 
   def feed
     Micropost.where("user_id = ?", id)
+  end
+
+  def update_current_msg(msg_id)
+    self.update_attribute(:current_msg_id, msg_id)
+  end
+
+  def is_viewing_current?(msg_id)
+    self.current_msg_id == msg_id
   end
 
   class << self
