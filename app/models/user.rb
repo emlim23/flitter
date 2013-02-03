@@ -23,6 +23,7 @@
 #  current_msg_id      :integer          default(0)
 #
 
+# TODO: create hangout and add user regardless of friend status
 class User < ActiveRecord::Base
   attr_accessor		:password
   attr_accessible 	:email, :fullname, :username, :password, :password_confirmation, :pic
